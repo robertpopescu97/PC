@@ -1,1 +1,2 @@
-print ('Ce facem astazi')
+name = ['Jose', 'Diana', 'Boris']
+print(f'Hellow my name is {name[2]}')
