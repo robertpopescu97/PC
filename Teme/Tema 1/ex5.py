@@ -1,5 +1,3 @@
-from typing import List
-
 afisaj = ("""
 1. Lista de cumparaturi
 2. Adaugare elemente
@@ -14,7 +12,7 @@ stergere_elemete = 3
 stergere_lista = 4
 cautare_lista = 5
 
-lista = [""]
+lista = []
 print(afisaj)
 comanda_operator = input(" Apasati o tasta:")
 if comanda_operator.isalpha():
@@ -22,15 +20,13 @@ if comanda_operator.isalpha():
 elif int(comanda_operator) == 2:
     lista_cumparaturi = open("listacumparaturi.txt", "a+")
     produs = input('Introduceti produsle: ')
-    lista.append(produs)
-    lista_adaugate2 = str(f"\n{produs}")
-    lista_cumparaturi.write(str(lista_adaugate2))
-    lista_cumparaturi.close()
-    with open("listacumparaturi.txt", "r") as f:
-        for line in f.read():
-            if produs not in line:
-                print(f'Produsul introdus {produs.upper()}  se afla in lista"')
-        f.close()
+    if produs in open("listacumparaturi.txt").read():
+        print(f' Produsul = "{produs.upper()} cautat se afla deja in lista')
+    elif produs != open("listacumparaturi.txt", "r").read():
+        lista.append(produs)
+        lista_adaugate2 = str(f"\n{produs}")
+        lista_cumparaturi.write(str(lista_adaugate2))
+        lista_cumparaturi.close()
 elif int(comanda_operator) == 1:
     print(open("listacumparaturi.txt", 'r').read())
 elif int(stergere_elemete) == 3:
@@ -48,8 +44,9 @@ elif int(stergere_elemete) == 3:
                 if stergere not in line:
                     f.write(line)
                     f.truncate()
-            print(f'Cuvantul "{stergere.upper()}" nu se afla in lista')
+            if stergere not in open("listacumparaturi.txt", "r").read():
+                print(f'Cuvantul introdus = "{stergere.upper()}" nu se afla in lista')
     elif raspuns.upper() == "N":
         print(afisaj)
     else:
-        print("Va rog apasati Y/N")
+        print('Va rog apasati Y/N')
