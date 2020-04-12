@@ -23,26 +23,26 @@ for x,y in range(10):
     elif y != float:
         print('Introduceti o valoare de tip float')
         y = float(input())
-
-elif num1 != float(input()) and num2 != (float(input)):
-    print("Introduceti o cifra")
-    if operatie_matematica == "1":
-        num1 = input("Introduceti primul numar:")
-        num2 = input("Introduceti al doilea numar:")
-        adunare = num1 + num2
-        print(f'Rezultatul adunari este = {adunare}')
-    elif operatie_matematica == "2":
-        num1 = input("Introduceti primul numar:")
-        num2 = input("Introduceti al doilea numar:")
-        scadere = num1 - num2
-        print(f'Rezultatul scaderi este = {scadere}')
-    elif operatie_matematica == "3":
-        num1 = input("Introduceti primul numar:")
-        num2 = input("Introduceti al doilea numar:")
-        inmultire = num1 * num2
-        print(f'Rezultatul inmultire este = {inmultire}')
-    elif operatie_matematica == "4":
-        num1 = input("Introduceti primul numar:")
-        num2 = input("Introduceti al doilea numar:")
-        impartire = num1 / num2
-        print(f'Rezultatul impartire este = {impartire}')
+#
+# elif num1 != float(input()) and num2 != (float(input)):
+#     print("Introduceti o cifra")
+#     if operatie_matematica == "1":
+#         num1 = input("Introduceti primul numar:")
+#         num2 = input("Introduceti al doilea numar:")
+#         adunare = num1 + num2
+#         print(f'Rezultatul adunari este = {adunare}')
+#     elif operatie_matematica == "2":
+#         num1 = input("Introduceti primul numar:")
+#         num2 = input("Introduceti al doilea numar:")
+#         scadere = num1 - num2
+#         print(f'Rezultatul scaderi este = {scadere}')
+#     elif operatie_matematica == "3":
+#         num1 = input("Introduceti primul numar:")
+#         num2 = input("Introduceti al doilea numar:")
+#         inmultire = num1 * num2
+#         print(f'Rezultatul inmultire este = {inmultire}')
+#     elif operatie_matematica == "4":
+#         num1 = input("Introduceti primul numar:")
+#         num2 = input("Introduceti al doilea numar:")
+#         impartire = num1 / num2
+#         print(f'Rezultatul impartire este = {impartire}')
