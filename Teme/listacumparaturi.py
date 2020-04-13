@@ -28,13 +28,16 @@ if int(comanda_operator) == 2:
     lista = []
     dictionar = {"produs": produs, "pret": float(pret)}
     lista.append(dictionar)
-    for index, produse in enumerate(lista, 1):
+    index = 0
+    for linie, produse in enumerate(lista, 1):
+        if index == 0:
             produs_adaugat = str(f'\n{index}. {produs} = {pret} Lei ')
             lista_cumparaturi.write(produs_adaugat)
+            index += 1
     lista_cumparaturi.close()
     with open("cumparaturi.txt", "r+") as d:
-         for index in d:
-             if index == index:
+        for index in d:
+            if index == index:
                 index += 1
                 produs_adaugat = str(f'\n{index}. {produs} = {pret} Lei ')
                 lista_cumparaturi.write(produs_adaugat)
