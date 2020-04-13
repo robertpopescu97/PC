@@ -22,14 +22,20 @@ comanda_operator = input("Alegeti o operatie:")
 
 
 if int(comanda_operator) == 2:
-    lista_cumparaturi = open("cumparaturi,txt", "a+")
+    lista_cumparaturi = open("cumparaturi.txt", "a+")
     produs = str(input("Introduceti produsul: ")).lower()
     pret = input("Introduceti pretul produsului: ")
     lista = []
     dictionar = {"produs": produs, "pret": float(pret)}
     lista.append(dictionar)
-
     for index, produse in enumerate(lista, 1):
-            produs_adaugat = str(f'\n{index+1}. {produs} = {pret} Lei ')
+            produs_adaugat = str(f'\n{index}. {produs} = {pret} Lei ')
             lista_cumparaturi.write(produs_adaugat)
+    lista_cumparaturi.close()
+    with open("cumparaturi.txt", "r+") as d:
+         for index in d:
+             if index == index:
+                index += 1
+                produs_adaugat = str(f'\n{index}. {produs} = {pret} Lei ')
+                lista_cumparaturi.write(produs_adaugat)
     lista_cumparaturi.close()
